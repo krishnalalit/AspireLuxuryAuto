@@ -1,12 +1,11 @@
 @charset "UTF-8";
 /*------------------------------------------------------------------------------*/
-/*This is main CSS file that contains custom style rules used in this template*/
+/*This is main CSS file that contains custom style rules used in this website*/
 /*------------------------------------------------------------------------------*/
-/* Template Name: Wheel */
+/* Template Name: Aspire Luxury Auto  */
 /* Version: 1.0.0 Initial Release */
-/* Build Date: 08-01-2016 */
-/* Author: Jewel Theme */
-/* Website: https://jeweltheme.com */
+/* Build Date: 07-10-2016 */
+/* Author: Motorheads */
 /* Copyright: (C) 2016 */
 /*-------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------
@@ -15,7 +14,7 @@
 0. Preload
 1. TEXT SETTING
 2.Tabs
-3.Slider
+3.Slide
 4.Menu
 5.Accordion
 5.Menu
@@ -238,7 +237,7 @@ h6 {
   margin-left: auto;
   margin-right: auto;
   left: 0;
-  right: 0; 
+  right: 0;
   top: 40px;
   margin: auto;
   z-index: 999;
