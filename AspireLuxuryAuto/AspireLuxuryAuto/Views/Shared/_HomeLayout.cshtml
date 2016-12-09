@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="wheel-logo">
-                        <a href="index.html"><img src="@Url.Content("~/Content/images/logo.png")" alt=""></a>
+                        <a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Content/images/logo.png")" alt=""></a>
                     </div>
                 </div>
                 <div class="col-sm-9 col-xs-12 padd-lr0">
@@ -55,9 +55,7 @@
                         </div>
                         <div class="wheel-top-menu-log">
                             <div class="top-menu-item">
-                                <div class="dropdown wheel-user-ico">
                                     @Html.Partial("_LoginPartial")
-                                </div>
                             </div>
                             @*<div class="top-menu-item">
                                 <div class="dropdown wheel-lang-ico">
@@ -101,17 +99,17 @@
                             <!-- class="dl-menu" -->
                             <ul class="main-menu dl-menu">
                                 <li class="menu-item   current-menu-parent menu-item-has-children   active-color ">
-                                    <a href="#">Home</a>
-                                    <ul class="sub-menu dl-submenu">
+                                    <a href="@Url.Action("Index", "Home")">Home</a>
+                                    @*<ul class="sub-menu dl-submenu">
                                         <li class="menu-item current-menu-item">
                                             <a href="index2.html">Home page 02</a>
                                         </li>
-                                    </ul>
+                                    </ul>*@
                                 </li>
                                 <li class="menu-item current-menu-parent menu-item-has-children  ">
-                                    <a href="#"> Listing </a>
+                                    <a href="@Url.Action("About", "Home")"> About Us </a>
                                     <!--class=" dl-submenu "-->
-                                    <ul class="sub-menu dl-submenu">
+                                    @*<ul class="sub-menu dl-submenu">
                                         <li class="menu-item current-menu-item">
                                             <a href="car-list-grid.html">Car Listing - Grid View</a>
                                         </li>
@@ -121,14 +119,17 @@
                                         <li class="menu-item current-menu-item">
                                             <a href="car-listing-details.html">car listing details</a>
                                         </li>
-                                    </ul>
+                                    </ul>*@
                                 </li>
                                 <li class="menu-item   ">
-                                    <a href="reservation1.html">Reservation</a>
+                                    <a href="@Url.Action("CarList", "Home")">Car-List</a>
+                                </li>
+                                <li class="menu-item   ">
+                                    <a href="@Url.Action("MakeReservation", "Home")">Reservation</a>
                                 </li>
                                 <li class="menu-item menu-item-has-children  ">
-                                    <a href="#">Pages</a>
-                                    <ul class="sub-menu">
+                                    <a href="@Url.Action("Contact", "Home")">ContactUs</a>
+                                    @*<ul class="sub-menu">
                                         <li class="menu-item "><a href="contact.html">contact</a></li>
                                         <li class="menu-item "><a href="register.html">Register</a></li>
                                         <li class="menu-item "><a href="checkout.html">Ceckout</a></li>
@@ -140,22 +141,27 @@
                                                 <li class="menu-item"><a href="#">Level 1</a></li>
                                             </ul>
                                         </li>
-                                    </ul>
+                                    </ul>*@
                                 </li>
-                                <li class="menu-item menu-item-has-children  ">
+                                @*<li class="menu-item menu-item-has-children  ">
                                     <a href="#">News</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="news.html">News</a></li>
                                         <li class="menu-item"><a href="news-details.html">News details</a></li>
                                     </ul>
-                                </li>
-                                <li class="menu-item ">
+                                </li>*@
+                                @*<li class="menu-item ">
                                     <a href="#">Features</a>
-                                </li>
+                                </li>*@
                             </ul>
                             <div class="nav-menu-icon"><i></i></div>
                         </nav>
-                    </div>
+                        @using Microsoft.AspNet.Identity
+                        @if (!(Request.IsAuthenticated))
+                        {
+                        <a href="@Url.Action("Login", "Account")" class="wheel-cheader-but">Login/Register</a>
+                        }
+                     </div>
                 </div>
             </div>
         </div>

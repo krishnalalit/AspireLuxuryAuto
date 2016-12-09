@@ -93,16 +93,16 @@ $('.wheel-table-cart .fa-times').on('click', function (e) {
 
     $('.reservation .wheel-start-form label.promo button').on('click', function(event) {
         event.preventDefault();
-        window.location.href = "reservation2.html";
+        window.location.href = window.location.href.match(/^.*\//)+"SelectCar";
     });
 
     $('.product-list .wheel-btn').on('click', function(event) {
         event.preventDefault();
-        window.location.href = "reservation3.html";
+        window.location.href = window.location.href.match(/^.*\//)+"ChooseOptions";
     });
     $('.product-wrap .wheel-btn.style-2').on('click', function(event) {
         event.preventDefault();
-        window.location.href = "reservation4.html";
+        window.location.href = window.location.href.match(/^.*\//)+"Review";
     });
 
 
