@@ -1,0 +1,166 @@
+﻿@using AspireLuxuryAuto.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<!-- //////////////////////////////// -->
+<div class="wheel-start3">
+    <img src="images/bg7.jpg" alt="" class="wheel-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 padd-lr0">
+                <div class="wheel-start3-body clearfix marg-lg-t255 marg-lg-b75 marg-sm-t190 marg-xs-b30">
+                    <h3>Register</h3>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#"> pages </a></li>
+                        <li class="active">Register</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /////////////////////////////////// -->
+<div class="wheel-register-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 padd-l0">
+                <div class="wheel-register-log marg-lg-t150 marg-lg-b150 marg-sm-t100 marg-sm-b100">
+                    <div class="wheel-header">
+                        <h5>have an account? Log In</h5>
+                    </div>
+
+                    <section id="loginForm">
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @*<h4>Use a local account to log in.</h4>*@
+                            <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @*  @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })*@
+                                    <label for="userName" class="fa fa-user">
+                                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Username / Email" })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                    </label>
+
+                                </div>
+                                <div class="form-group">
+                                    @* @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })*@
+                                    <label for="userPass" class="fa fa-lock">
+                                        @Html.PasswordFor(m => m.Password, new { @placeholder = "Passsword" })
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                    </label>
+                                </div>
+
+
+
+                                <label class="password-sing clearfix" for="input-val2">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    <span>Keep me signed in</span>
+                                </label>
+
+
+
+                                <div class="form-group">
+
+                                    <button type="submit"  class="wheel-btn" >Login Now</button>
+
+                                </div>
+
+                                @*<p>
+                                        @Html.ActionLink("Register as a new user", "Register")
+                                    </p>*@
+                                @* Enable this once you have account confirmation enabled for password reset functionality
+                                    <p>
+                                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                    </p>*@
+                        }
+                    </section>
+
+
+                    <div class="wheel-register-link">
+                        <a href="" class="wheel-btn-link wheel-bg11">Sign in With Facebook</a>
+                        <a href="" class="wheel-btn-link wheel-bg12">Sign in With Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 padd-r0">
+                <div class="wheel-register-sign marg-lg-t150 marg-lg-b150 marg-sm-t100 marg-sm-b100">
+                    <div class="wheel-header">
+                        <h5>Sign up Now </h5>
+                        <h3>Get <span>Registered</span></h3>
+                    </div>
+                    @*<form action="#">
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Username">
+                        <input type="text" placeholder="Password">
+                        <input type="text" placeholder="Confirm Password">
+                        <label for="input-val1">
+                            <input type="checkbox" id='input-val1'> <span>I agree with the </span>
+                            <a href="">Terms and Conditions</a>
+                        </label>
+                        <button class="wheel-btn">Sign Up</button>
+                    </form>*@
+                    
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                        <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name">
+                        <input data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" type="text" value="" placeholder="Email"/>
+                        <input type="text" placeholder="Username">
+                        <input data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Password" name="Password" type="password" placeholder="Password"/>
+                        <input data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" type="password" placeholder="Confirm Password"/>
+
+
+
+
+
+                        <label for="input-val1">
+                            <input type="checkbox" id='input-val1'> <span>I agree with the </span>
+                            <a href="">Terms and Conditions</a>
+                        </label>
+                        <button type="submit" class="wheel-btn">Sign Up</button>
+                    }
+
+
+                    <div class="wheel-register-link">
+                        <a href="" class="wheel-btn-link wheel-bg11">Register With Facebook</a>
+                        <a href="" class="wheel-btn-link wheel-bg12">Register With Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /////////////////////////////// -->
+<div class="wheel-subscribe wheel-bg2">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6 padd-lr0">
+                <div class="wheel-header">
+                    <h5>Newsletter Signup </h5>
+                    <h3>Subscribe & get<span> 20% </span> Off</h3>
+                </div>
+            </div>
+            <div class="col-md-6 padd-lr0">
+                <form action="#">
+                    <input type="text" placeholder="Your Email Adddress">
+                    <button class="wheel-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

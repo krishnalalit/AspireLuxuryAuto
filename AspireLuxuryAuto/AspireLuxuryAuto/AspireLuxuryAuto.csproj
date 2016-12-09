@@ -244,6 +244,7 @@
     <Content Include="Views\Home\SelectCar.cshtml" />
     <Content Include="Views\Home\ChooseOptions.cshtml" />
     <Content Include="Views\Home\Review.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
